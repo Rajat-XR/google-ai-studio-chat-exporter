@@ -21,19 +21,15 @@ Google AI Studio is an excellent environment for prompt engineering and interact
   * **JSON (`.json`):** Exports a structured AST tree with role labels, perfect for creating datasets, fine-tuning LLMs, or RAG pipelines.
 * **100% Local & Private:** No external APIs, no analytics, no telemetry. Data processing happens entirely within your local browser instance.
 
-## Installation
+## 🚀 Installation
 
-### Option 1: Chrome Web Store (Recommended)
-You can install the official, stable release directly from the Chrome Web Store:
-👉 **[Install Chat Exporter for Google AI Studio](https://chromewebstore.google.com/detail/chat-exporter-for-google/pmccmopibnkjfmaddlloincblhcnmndd)**
+**Chat Exporter** is distributed exclusively through the official Chrome Web Store to ensure the highest security standards and automated updates.
 
-### Option 2: Manual Installation (Developer Mode)
-If you prefer to build from source or inspect the code locally:
-1. Clone this repository: `git clone https://github.com/Rajat-XR/google-ai-studio-chat-exporter.git`
-2. Open Google Chrome and navigate to `chrome://extensions/`.
-3. Enable **Developer mode** (toggle in the top right corner).
-4. Click **Load unpacked**.
-5. Select the `dist` or root directory of the cloned repository.
+### Official Release
+Install the latest stable version with a single click:
+👉 **[Get Chat Exporter on the Chrome Web Store](https://chromewebstore.google.com/detail/chat-exporter-for-google/pmccmopibnkjfmaddlloincblhcnmndd)**
+
+> **Note:** This repository serves as the official hub for documentation, community support, and feature requests. The source code is currently proprietary to ensure the integrity of the extraction logic and security of the local processing engine.
 
 ## Usage
 
