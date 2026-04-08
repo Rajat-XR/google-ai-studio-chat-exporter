@@ -8,7 +8,12 @@ A browser extension to export conversations from Google AI Studio into perfectly
 
 Google AI Studio is an excellent environment for prompt engineering and interacting with Gemini models, but it currently lacks a native export feature. Manual copy-pasting breaks code formatting, ruins tables, and captures messy internal model reasoning (`<thinking>` blocks). This extension solves the extraction problem natively within the browser.
 
-![Chat Exporter Promo Banner](https://raw.githubusercontent.com/Rajat-XR/google-ai-studio-chat-exporter/main/images/marquee.png) *(Note: Upload your 1400x560 Marquee tile to an `images` folder in your repo and update this link)*
+![Chat Exporter Promo Banner](https://raw.github<img width="1400" height="560" alt="Chat exporter (1400 x 560 px) (2)" src="https://github.com/user-attachments/assets/b4f6250f-c45d-4071-9eab-d737bdb615a1" />
+usercontent.com/Rajat-XR/google-ai-studio-chat-exporter/main/images/marquee.png) *(Note: Upload your 1400x560 Marquee tile to an `images` folder in your repo and update this link)*
+
+![Uploading Chat exporter (1400 x 560 px) (2).png…]()
+
+
 
 ## Features
 
