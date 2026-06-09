@@ -1,4 +1,4 @@
-# Google AI Studio Chat Exporter
+# Chat Exporter: Save AI Chats to PDF, Markdown & JSON
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/pmccmopibnkjfmaddlloincblhcnmndd.svg?label=Chrome%20Web%20Store&color=blue)](https://chromewebstore.google.com/detail/chat-exporter-for-google/pmccmopibnkjfmaddlloincblhcnmndd)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
