@@ -1,11 +1,10 @@
 # AI Chat Exporter
-(Save AI Chats to PDF, Markdown, and JSON)
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/pmccmopibnkjfmaddlloincblhcnmndd.svg?label=Chrome%20Web%20Store&color=blue)](https://chromewebstore.google.com/detail/pmccmopibnkjfmaddlloincblhcnmndd)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Privacy: Local Only](https://img.shields.io/badge/Privacy-100%25_Local-success.svg)](#privacy-and-security)
 
-AI Chat Exporter is a browser extension that allows users to export chat conversation with ChatGPT, Gemini, and Google AI Studio into beautiful PDF, Markdown, and JSON files.
+AI Chat Exporter: Save AI Chats to PDF, Markdown & JSON is a browser extension that allows users to export chat conversation with ChatGPT, Gemini, and Google AI Studio into beautiful PDF, Markdown, and JSON files.
 
 Whereas AI tools offer great prompt engineering and research capabilities, sometimes the lack of built-in export function makes the user either wait for days for their backup copy of data to be generated or manually copy information which messes up all the code formatting and tables.
 
