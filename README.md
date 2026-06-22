@@ -1,66 +1,72 @@
-# Chat Exporter: Save AI Chats to PDF, Markdown & JSON
+# AI Chat Exporter: Save Conversations to PDF, Markdown, and JSON
 
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/pmccmopibnkjfmaddlloincblhcnmndd.svg?label=Chrome%20Web%20Store&color=blue)](https://chromewebstore.google.com/detail/chat-exporter-for-google/pmccmopibnkjfmaddlloincblhcnmndd)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/pmccmopibnkjfmaddlloincblhcnmndd.svg?label=Chrome%20Web%20Store&color=blue)](https://chromewebstore.google.com/detail/pmccmopibnkjfmaddlloincblhcnmndd)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Privacy: Local Only](https://img.shields.io/badge/Privacy-100%25_Local-success.svg)](#privacy--security)
+[![Privacy: Local Only](https://img.shields.io/badge/Privacy-100%25_Local-success.svg)](#privacy-and-security)
 
-A browser extension to export conversations from Google AI Studio into perfectly formatted Markdown, PDF, and JSON files. 
+AI Chat Exporter is a privacy-first browser extension designed to export conversations from ChatGPT, Gemini, and Google AI Studio into beautifully formatted PDF, Markdown, and JSON files. 
 
-Google AI Studio is an excellent environment for prompt engineering and interacting with Gemini models, but it currently lacks a native export feature. Manual copy-pasting breaks code formatting, ruins tables, and captures messy internal model reasoning (`<thinking>` blocks). This extension solves the extraction problem natively within the browser.
+While AI platforms provide excellent environments for prompt engineering and research, native export functionality is often limited or requires days to process full data backups. Manual copying breaks code formatting, destroys tables, and creates messy documents. This extension solves the extraction problem natively within the browser, allowing professionals to save and backup AI conversations instantly.
 
-<img width="4000" height="2500" alt="Chat Exporter" src="https://github.com/user-attachments/assets/dc48ac36-a5ed-4703-8bc1-8aa1da9fd215" />
+## Supported Platforms
 
-## Features
+The extension currently supports one-click exports from the following platforms:
+* ChatGPT (chatgpt.com)
+* Google Gemini (gemini.google.com)
+* Google AI Studio (aistudio.google.com)
 
-* **Rich Text Preservation:** Uses an internal AST (Abstract Syntax Tree) parser to perfectly retain code blocks, syntax highlighting, lists, bold/italics, and tables.
-* **Intelligent 'Thought' Stripping:** Automatically detects and removes Gemini's internal reasoning/planning blocks, ensuring your exported documentation is clean and client-ready.
-* **Deep DOM Extraction:** Bypasses Angular's virtual scroller and pierces Shadow DOMs to reliably capture massive, 1M+ token conversations from top to bottom.
-* **Multiple Formats:**
-  * **Markdown (`.md`):** Optimized for seamless pasting into Obsidian, Notion, or GitHub.
-  * **PDF (`.pdf`):** Generates a clean, print-ready document with native Dark Mode support.
-  * **JSON (`.json`):** Exports a structured AST tree with role labels, perfect for creating datasets, fine-tuning LLMs, or RAG pipelines.
-* **100% Local & Private:** No external APIs, no analytics, no telemetry. Data processing happens entirely within your local browser instance.
+## Core Features
 
-## 🚀 Installation
+* **Rich Text and Code Preservation:** Utilizes an internal Abstract Syntax Tree (AST) parser to perfectly retain code blocks, syntax highlighting, lists, bold and italic text, and tables.
+* **Intelligent Document Formatting:** Automatically detects and structures conversation turns, ensuring your exported documentation is clean, readable, and ready for professional use.
+* **Deep DOM Extraction:** Bypasses virtual scrollers and pierces Shadow DOM boundaries to reliably capture long, multi-turn conversations from start to finish.
+* **Multiple Output Formats:**
+  * **Markdown (.md):** Optimized for seamless pasting and integration into knowledge management systems like Obsidian, Notion, or GitHub.
+  * **PDF (.pdf):** Generates a clean, print-ready document with native support for both Light and Dark modes.
+  * **JSON (.json):** Exports a structured dataset including role labels (User vs. Model) and AST trees, ideal for creating training datasets, fine-tuning LLMs, or developing Retrieval-Augmented Generation (RAG) pipelines.
+* **100% Local and Private:** Operates entirely within your local browser instance. No external APIs, no analytics, no telemetry.
 
-**Chat Exporter** is distributed exclusively through the official Chrome Web Store to ensure the highest security standards and automated updates.
+## Installation
 
-### Official Release
-Install the latest stable version with a single click:
-👉 **[Get Chat Exporter on the Chrome Web Store](https://chromewebstore.google.com/detail/chat-exporter-for-google/pmccmopibnkjfmaddlloincblhcnmndd)**
+AI Chat Exporter is distributed through the official Chrome Web Store to ensure the highest security standards, verified permissions, and automated updates.
 
-> **Note:** This repository serves as the official hub for documentation, community support, and feature requests. The source code is currently proprietary to ensure the integrity of the extraction logic and security of the local processing engine.
+**[Download AI Chat Exporter from the Chrome Web Store](https://chromewebstore.google.com/detail/pmccmopibnkjfmaddlloincblhcnmndd)**
 
-## Usage
+## Usage Guide
 
-1. Open a conversation in [Google AI Studio](https://aistudio.google.com/).
-2. Click the **Chat Exporter** extension icon in your browser toolbar.
-3. (Optional) Toggle **System Instructions** or **Dark Mode** on/off.
-4. Select your desired format (**PDF, Markdown, or JSON**) and click **Export Now**.
-5. *For long chats, the extension will automatically scroll the page to mount and capture unloaded DOM nodes. Please do not close the window until the export completes.*
+1. Open a conversation in a supported AI platform (ChatGPT, Gemini, or Google AI Studio).
+2. Click the AI Chat Exporter extension icon in your browser toolbar.
+3. Configure your export settings (e.g., toggle Dark Mode for PDF formatting).
+4. Select your preferred output format (PDF, Markdown, or JSON).
+5. Click the Export button. The file will generate locally and download automatically.
 
-## How It Works (Technical Overview)
+*Note for extensive conversations: The extension may automatically scroll the page to mount and capture unloaded content. Please keep the tab active until the download completes.*
 
-Extracting data from AI Studio is non-trivial due to its use of a highly optimized virtual scroller and heavily nested Shadow DOM components. 
+## Technical Overview
 
-Instead of relying on basic `innerText` scraping, this extension:
-1. Orchestrates the viewport scroll to force the UI framework to mount hidden conversation chunks.
-2. Traverses the DOM tree (including open `shadowRoot` boundaries) to isolate `ms-prompt-chunk` and `ms-text-chunk` components.
-3. Deduplicates nodes mathematically to prevent parent/child overlapping.
-4. Parses the raw text into a standard AST format, applying strict Regex exclusions to omit `<thinking>` tags.
-5. Compiles the AST into the requested file format natively via Blob URLs.
+Extracting structured data from modern AI web interfaces requires advanced DOM traversal techniques due to their use of highly optimized virtual scrollers, obfuscated CSS classes, and nested Shadow DOM components.
 
-## Privacy & Security
+Instead of relying on basic text scraping, AI Chat Exporter:
+1. Orchestrates viewport scrolling to force the underlying UI framework to mount hidden conversation chunks.
+2. Traverses the Document Object Model (including open shadow boundaries) to isolate individual message components.
+3. Deduplicates nodes to prevent overlapping content.
+4. Parses the raw elements into a standardized AST format.
+5. Compiles the AST into the requested file format natively using Blob URLs, ensuring zero data transmission.
 
-This extension requires the `activeTab` and `scripting` permissions to read the DOM of the active AI Studio tab and compile the export file. 
+## Privacy and Security
 
-**Zero Data Collection:** We do not track usage, we do not use analytics, and we do not communicate with external servers. Your prompts, API keys, and model outputs never leave your local machine.
+Data security is the primary architectural principle of this tool. 
+
+The extension requires the standard permissions necessary to read the Document Object Model of the active tab and compile the export file. 
+
+**Zero Data Collection Policy:** There is no tracking, no usage analytics, and no communication with external servers. Your prompts, API keys, and model outputs remain strictly confined to your local machine. This makes the tool safe for exporting sensitive corporate data, source code, and confidential research.
 
 ## Contributing
 
-Contributions, issues, and feature requests are welcome! 
-If you notice a formatting edge-case (e.g., a broken table layout or un-parsed code block), please open an issue with a sample of the raw text so the AST parser can be updated.
+Contributions, issue reports, and feature requests are welcome. 
+
+If you encounter a formatting edge-case (such as a broken table layout or an unparsed code block on a newly updated AI platform), please open an issue in this repository with a sample of the raw structure so the AST parser can be updated.
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+This project is distributed under the MIT License. See the `LICENSE` file for more information.
