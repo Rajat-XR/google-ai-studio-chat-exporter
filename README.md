@@ -4,9 +4,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Privacy: Local Only](https://img.shields.io/badge/Privacy-100%25_Local-success.svg)](#privacy-and-security)
 
-AI Chat Exporter is a privacy-first browser extension designed to export conversations from ChatGPT, Gemini, and Google AI Studio into beautifully formatted PDF, Markdown, and JSON files. 
+AI Chat Exporter is a browser extension that allows users to export chat conversation with ChatGPT, Gemini, and Google AI Studio into beautiful PDF, Markdown, and JSON files.
 
-While AI platforms provide excellent environments for prompt engineering and research, native export functionality is often limited or requires days to process full data backups. Manual copying breaks code formatting, destroys tables, and creates messy documents. This extension solves the extraction problem natively within the browser, allowing professionals to save and backup AI conversations instantly.
+Whereas AI tools offer great prompt engineering and research capabilities, sometimes the lack of built-in export function makes the user either wait for days for their backup copy of data to be generated or manually copy information which messes up all the code formatting and tables.
 
 ## Supported Platforms
 
